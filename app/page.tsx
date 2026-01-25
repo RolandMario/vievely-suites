@@ -1,4 +1,5 @@
 "use client"
+
 import React, { useState, useEffect } from 'react';
 import { 
   Menu, X, Bed, Users, Square, Coffee, Wifi, Tv, Wind, 
@@ -10,11 +11,12 @@ import {
 //import logo from 'logo'
 import Image from 'next/image';
 import Link from 'next/link';
+import Amenities from './components/amenities';
 
 
 
 // --- DATA CONSTANTS ---
-const SUITES = [
+export const SUITES = [
   {
     id: 'standard',
     name: 'Standard Suite',
@@ -113,7 +115,9 @@ export default function App() {
 
   // --- UI COMPONENTS ---
 
-  const Header = () => (
+  
+
+   const Header = () => (
     <header className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${isScrolled ? 'bg-white shadow-xl py-3' : 'bg-transparent py-6'}`}>
       <div className="container mx-auto px-6 flex items-center justify-between">
         <div 
@@ -198,6 +202,8 @@ export default function App() {
       )}
     </header>
   );
+
+  
 
   const Footer = () => (
     <footer className="bg-[#0f172a] text-slate-400 pt-24 pb-12 overflow-hidden relative">
@@ -297,12 +303,12 @@ export default function App() {
             Discover a collection of suites designed to surpass international standards of elegance and hospitality.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <button onClick={() => navigateTo('booking')} className="w-full sm:w-auto bg-amber-600 hover:bg-amber-700 text-white px-12 py-5 rounded-2xl font-black text-lg transition-all shadow-2xl shadow-amber-600/20 flex items-center gap-3">
+            <Link href={'/booking'} onClick={() => navigateTo('booking')} className="w-full sm:w-auto bg-amber-600 hover:bg-amber-700 text-white px-12 py-5 rounded-2xl font-black text-lg transition-all shadow-2xl shadow-amber-600/20 flex items-center gap-3">
               Book Your Stay <ChevronRight />
-            </button>
-            <button onClick={() => navigateTo('about')} className="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white px-12 py-5 rounded-2xl font-black text-lg transition-all">
+            </Link>
+            <Link href={'/about'} onClick={() => navigateTo('about')} className="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white px-12 py-5 rounded-2xl font-black text-lg transition-all">
               Our Story
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -329,7 +335,7 @@ export default function App() {
           </div>
         </div>
       </section>
-
+            <Amenities/>
       {/* Suites Showcase */}
       <section className="py-32 bg-slate-50">
         <div className="container mx-auto px-6">
@@ -381,7 +387,7 @@ export default function App() {
     </div>
   );
 
-  const SuiteDetailsView = ({ suite }: { suite: any}) => (
+  const SuiteDetailsView = ({ suite}: { suite: any}) => (
     <div className="pt-32 pb-24 bg-white animate-in slide-in-from-bottom duration-500">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-12 gap-16">
@@ -481,7 +487,7 @@ export default function App() {
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="relative">
-              <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80" className="rounded-[4rem] shadow-2xl" alt="Lobby" />
+              <img src="/assets/reception.jpeg" className="rounded-[4rem] shadow-2xl" alt="Lobby" />
               <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-amber-600 rounded-[3rem] p-10 text-white flex flex-col justify-center shadow-2xl">
                 <p className="text-5xl font-black mb-2">12+</p>
                 <p className="text-sm font-bold uppercase tracking-widest opacity-80">Years of Service Excellence</p>
@@ -531,9 +537,31 @@ export default function App() {
       email: ''
     });
 
-    const handleConfirm = (e:any) => {
+    const handleConfirm = async (e:any) => {
       e.preventDefault();
       // Logic for Next.js API call (e.g., fetch('/api/send-email', { method: 'POST', body: ... }))
+        e.preventDefault();
+       setStatus('loading');
+   
+       try {
+         const response = await fetch('/api/booking', {
+           method: 'POST',
+           headers: {
+             'Content-Type': 'application/json',
+           },
+           body: JSON.stringify(bookingData),
+         });
+   
+         if (response.ok) {
+           setStatus('success');
+          //  setBookingData({ name:''}); // Clear form
+         } else {
+           setStatus('error');
+         }
+       } catch (error) {
+         console.error('Submission Error:', error);
+         setStatus('error');
+       }
       setStep(3);
     };
 
@@ -558,7 +586,7 @@ export default function App() {
                 </div>
               </div>
               <div className="pt-12 text-sm text-slate-400 italic">
-                Best price guaranteed when booking directly with Lumina Suites.
+                Best price guaranteed when booking directly with Vievely Suites.
               </div>
             </div>
 
@@ -605,6 +633,7 @@ export default function App() {
               {step === 2 && (
                 <form onSubmit={handleConfirm} className="space-y-8 animate-in fade-in slide-in-from-right">
                   <div className="space-y-6">
+                    
                     <div>
                       <label className="text-xs font-black uppercase text-slate-400 ml-2 tracking-widest block mb-2">Full Name</label>
                       <input type="text" required className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-amber-500" placeholder="John Doe" value={bookingData.name} onChange={e => setBookingData({...bookingData, name: e.target.value})} />
