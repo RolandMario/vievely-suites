@@ -34,7 +34,7 @@ const BookingView = () => {
 
     // Exponential backoff retry logic for the API call
     const submitWithRetry = async (retries = 5, delay = 1000) => {
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbxb4q1xoFX-xNGBQZM1GH7LBzixO6IMmLp_1rIxMP-Rnr4PGvbVWpxKswrX6WWZM6mV/exec';
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbwH5-OkEg22xpYcCahBGu4RqHJpvviviZyIyJG3BHwiyOyh_1HdAl49fbThOLsw3ULV/exec';
       
       try {
         const response = await fetch(scriptURL, {
