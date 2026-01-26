@@ -37,7 +37,7 @@ const Amenities = ()=>{
             <div className="relative group">
               <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl">
                 <img 
-                  src="/assets/gym.jpeg" 
+                  src="/assets/vievely_front.jpeg" 
                   alt="Luxury Apartment Services" 
                   className="w-full h-[700px] object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
@@ -54,7 +54,7 @@ const Amenities = ()=>{
                 <span className="text-amber-600 font-bold uppercase tracking-[0.3em] text-sm block mb-4">Elite Living</span>
                 <h2 className="text-5xl font-black text-slate-900 mb-6 leading-tight">Apartment Services <br/> & Amenities</h2>
                 <p className="text-slate-500 text-lg leading-relaxed max-w-lg">
-                  At Vievely Suites, we redefine urban residency with a comprehensive suite of world-class features designed for your ultimate comfort and security.
+                 Experience luxury living at its finest in these exquisite suites, modern apartment. With stunning views and top-of-the-line amenities.
                 </p>
               </div>
 

@@ -12,6 +12,8 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 import Amenities from './components/amenities';
+import Footer from './components/footer';
+import Header from './components/navbar';
 
 
 
@@ -19,21 +21,22 @@ import Amenities from './components/amenities';
 export const SUITES = [
   {
     id: 'standard',
-    name: 'Standard Suite',
+    name: 'Standard Studio',
     price: '88,704',
     tagline: 'Refined Simplicity',
     description: 'Our Standard Suite offers a harmonious balance of comfort and style. Featuring signature bedding and handcrafted furniture, it provides a sanctuary for the solo traveler or couple looking for a peaceful city retreat.',
     features: ['King Bed', 'Rain Shower', 'Work Desk', 'City View', 'Smart Lighting'],
     size: '35m²',
     images: [
-      '/assets/standard-2.jpeg',
-      'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80'
+      '/assets/standard-studio-4.jpeg',
+      '/assets/standard-studio-3.jpeg',
+      '/assets/standard-studio-5.jpeg',
+ 
     ]
   },
   {
     id: 'deluxe',
-    name: 'Deluxe Suite',
+    name: 'Deluxe Studio',
     price: '99,099',
     tagline: 'Panoramic Luxury',
     description: 'The Deluxe Suite elevates your stay with floor-to-ceiling windows and expanded living space. Wake up to breathtaking skyline views and enjoy premium amenities designed for ultimate relaxation.',
@@ -54,9 +57,10 @@ export const SUITES = [
     features: ['Separate Living Area', 'Executive Lounge Access', 'Butler Service', 'Smart Home Controls', 'Daily Refreshments'],
     size: '75m²',
     images: [
-      '/assets/executive.jpeg',
-      'https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=800&q=80'
+      '/assets/executive-suites.jpeg',
+      '/assets/executive-suites-4.jpeg',
+      '/assets/executive-suites-3.jpeg',
+
     ]
   },
   {
@@ -116,165 +120,6 @@ export default function App() {
   // --- UI COMPONENTS ---
 
   
-
-   const Header = () => (
-    <header className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${isScrolled ? 'bg-white shadow-xl py-3' : 'bg-transparent py-6'}`}>
-      <div className="container mx-auto px-6 flex items-center justify-between">
-        <div 
-          className="flex items-center gap-2 cursor-pointer group" 
-          onClick={() => navigateTo('home')}
-        >
-          <div className={`w-12 h-12 flex items-center justify-center rounded-xl transition-all ${isScrolled ? 'bg-slate-900 text-white' : 'bg-white/20 backdrop-blur-md text-white'}`}>
-            {/* <Bed size={24} className="group-hover:rotate-12 transition-transform" /> */}
-            <Image
-              src="/logo.png" 
-              alt="vievely suites" 
-              width={600} 
-              height={400} 
-              className="rounded-xl shadow-lg border border-gray-200"
-            />
-          </div>
-          <div className="flex flex-col">
-            <span className={`text-xl font-black tracking-widest leading-none ${isScrolled ? 'text-slate-900' : 'text-white'}`}>VIEVELY</span>
-            <span className={`text-[10px] font-bold tracking-[0.4em] ${isScrolled ? 'text-amber-600' : 'text-amber-400'}`}>SUITES & APARTMENT</span>
-          </div>
-        </div>
-
-        {/* Desktop Navigation */}
-        <nav className={`hidden lg:flex items-center gap-10 font-medium ${isScrolled ? 'text-slate-700' : 'text-white'}`}>
-          <button onClick={() => navigateTo('home')} className="hover:text-amber-500 transition-colors">Home</button>
-          
-          <div className="relative group py-2">
-            <button className="flex items-center gap-1 hover:text-amber-500 transition-colors">
-              Our Suites <ChevronRight size={14} className="group-hover:rotate-90 transition-transform" />
-            </button>
-            <div className="absolute top-full -left-4 w-64 bg-white shadow-2xl rounded-2xl overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all border border-slate-100 p-2 transform translate-y-2 group-hover:translate-y-0">
-              {SUITES.map((s:any) => (
-                <button 
-                  key={s.id}
-                  onClick={() => navigateTo('suite-details', s)}
-                  className="w-full text-left px-4 py-3 text-slate-700 hover:bg-slate-50 hover:text-amber-600 rounded-xl transition-colors text-sm font-semibold flex justify-between items-center"
-                >
-                  {s.name} <ArrowRight size={14} />
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <button onClick={() => navigateTo('about')} className="hover:text-amber-500 transition-colors">About</button>
-          {/* <button onClick={() => navigateTo('contact')} className="hover:text-amber-500 transition-colors">Contact</button> */}
-          <Link href={'/contact'} className="hover:text-amber-500 transition-colors"> Contact</Link>
-          <button 
-            onClick={() => navigateTo('booking')}
-            className={`px-8 py-3 rounded-full font-bold transition-all transform active:scale-95 ${isScrolled ? 'bg-amber-600 text-white hover:bg-amber-700' : 'bg-white text-slate-900 hover:bg-amber-50 shadow-lg'}`}
-          >
-            Book Now
-          </button>
-        </nav>
-
-        {/* Mobile Toggle */}
-        <button 
-          className={`lg:hidden p-2 rounded-lg ${isScrolled ? 'text-slate-900' : 'text-white bg-white/10'}`} 
-          onClick={() => setMobileMenu(!mobileMenu)}
-        >
-          {mobileMenu ? <X size={28} /> : <Menu size={28} />}
-        </button>
-      </div>
-
-      {/* Mobile Menu Overlay */}
-      {mobileMenu && (
-        <div className="fixed inset-0 top-[72px] bg-white z-[99] animate-in slide-in-from-right duration-300">
-          <div className="flex flex-col p-8 gap-6 overflow-y-auto h-full">
-            <button onClick={() => navigateTo('home')} className="text-3xl font-black text-slate-900 text-left">Home</button>
-            <div className="space-y-4">
-              <span className="text-sm font-bold text-amber-600 uppercase tracking-widest">Select Suite</span>
-              <div className="grid gap-3">
-                {SUITES.map((s:any) => (
-                  <button key={s.id} onClick={() => navigateTo('suite-details', s)} className="text-xl font-semibold text-slate-600 text-left pl-4 border-l-2 border-slate-100">{s.name}</button>
-                ))}
-              </div>
-            </div>
-            <button onClick={() => navigateTo('about')} className="text-3xl font-black text-slate-900 text-left">About</button>
-            <button onClick={() => navigateTo('contact')} className="text-3xl font-black text-slate-900 text-left">Contact</button>
-            <button onClick={() => navigateTo('booking')} className="w-full bg-amber-600 text-white py-5 rounded-2xl text-xl font-bold mt-4 shadow-xl shadow-amber-200">Book A Stay</button>
-          </div>
-        </div>
-      )}
-    </header>
-  );
-
-  
-
-  const Footer = () => (
-    <footer className="bg-[#0f172a] text-slate-400 pt-24 pb-12 overflow-hidden relative">
-      <div className="absolute top-0 right-0 w-96 h-96 bg-amber-600/5 blur-[120px] rounded-full -mr-48 -mt-48" />
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
-          <div className="space-y-6">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-amber-600 rounded-lg flex items-center justify-center text-white"><Bed size={20}/></div>
-              <span className="text-2xl font-black tracking-tighter text-white">Vievely Suites</span>
-            </div>
-            <p className="text-sm leading-loose">
-              Setting the international standard for luxury lodging. We provide a bespoke experience for travelers who demand the best in design, comfort, and service.
-            </p>
-            <div className="flex gap-4">
-              {[Instagram, Facebook, Twitter].map((Icon, idx) => (
-                <button key={idx} className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-amber-600 hover:-translate-y-1 transition-all">
-                  <Icon size={18} />
-                </button>
-              ))}
-            </div>
-          </div>
-          
-          <div>
-            <h4 className="text-white font-bold text-lg mb-8 relative after:content-[''] after:absolute after:bottom-[-8px] after:left-0 after:w-10 after:h-1 after:bg-amber-600">Company</h4>
-            <ul className="space-y-4">
-              {['Home', 'About Us', 'Contact', 'Press Kit', 'Careers'].map(item => (
-                <li key={item} className="hover:text-amber-500 transition-colors cursor-pointer text-sm">{item}</li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-white font-bold text-lg mb-8 relative after:content-[''] after:absolute after:bottom-[-8px] after:left-0 after:w-10 after:h-1 after:bg-amber-600">Explore</h4>
-            <ul className="space-y-4">
-              {SUITES.map((s:any) => (
-                <li key={s.id} onClick={() => navigateTo('suite-details', s)} className="hover:text-amber-500 transition-colors cursor-pointer text-sm">{s.name}</li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-white font-bold text-lg mb-8 relative after:content-[''] after:absolute after:bottom-[-8px] after:left-0 after:w-10 after:h-1 after:bg-amber-600">Contact</h4>
-            <ul className="space-y-5">
-              <li className="flex gap-4 items-start">
-                <MapPin size={20} className="text-amber-500 shrink-0" />
-                <span className="text-sm leading-relaxed">37, Oduduwa way, GRA Ikeja, Lagos, Nigeria</span>
-              </li>
-              <li className="flex gap-4 items-center">
-                <Phone size={20} className="text-amber-500 shrink-0" />
-                <span className="text-sm">+234 808 233 2432</span>
-              </li>
-              <li className="flex gap-4 items-center">
-                <Mail size={20} className="text-amber-500 shrink-0" />
-                <span className="text-sm">vievelysuites@gmail.com</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-        
-        <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs tracking-widest uppercase font-semibold">
-          <p>© 2026 Vievely Suites & Apartments</p>
-          <div className="flex gap-8">
-            <span className="cursor-pointer hover:text-white transition-colors">Privacy Policy</span>
-            <span className="cursor-pointer hover:text-white transition-colors">Terms of Service</span>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
-
   // --- PAGES ---
 
   const HomeView = () => (
@@ -684,7 +529,7 @@ export default function App() {
         {view === 'suite-details' && <SuiteDetailsView suite={activeSuite} />}
         {view === 'about' && <AboutView />}
        
-        {view === 'booking' && <BookingView />}
+        {/* {view === 'booking' && <BookingView />} */}
       </main>
       <Footer />
     </div>

@@ -22,9 +22,10 @@ export const SUITES = [
     features: ['King Bed', 'Rain Shower', 'Work Desk', 'City View', 'Smart Lighting'],
     size: '35m²',
     images: [
-      '/assets/standard-2.jpeg',
-      'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80'
+      '/assets/standard-studio-4.jpeg',
+      '/assets/standard-studio-3.jpeg',
+      '/assets/standard-studio-5.jpeg',
+
     ]
   },
   {

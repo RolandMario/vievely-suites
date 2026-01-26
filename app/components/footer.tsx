@@ -6,6 +6,7 @@ import {
   ChevronRight, Star, CheckCircle, Calendar, ShieldCheck,
   ArrowRight, Waves, Utensils
 } from 'lucide-react';
+import Link from 'next/link';
 
 
 
@@ -113,9 +114,9 @@ const navigateTo = (route:any, suite = null) => {
             </p>
             <div className="flex gap-4">
               {[Instagram, Facebook, Twitter].map((Icon, idx) => (
-                <button key={idx} className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-amber-600 hover:-translate-y-1 transition-all">
+                <Link href={'https://www.instagram.com/vievely_suites_and_apartments?utm_source=qr&igsh=MXd0YTBnam9jNXF5ag=='} key={idx} className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-amber-600 hover:-translate-y-1 transition-all">
                   <Icon size={18} />
-                </button>
+                </Link>
               ))}
             </div>
           </div>
@@ -143,11 +144,11 @@ const navigateTo = (route:any, suite = null) => {
             <ul className="space-y-5">
               <li className="flex gap-4 items-start">
                 <MapPin size={20} className="text-amber-500 shrink-0" />
-                <span className="text-sm leading-relaxed">37, Oduduwa way, GRA Ikeja, Lagos, Nigeria</span>
+                <span className="text-sm leading-relaxed">34D, Oduduwa way, GRA, Ikeja, Lagos, Nigeria </span>
               </li>
               <li className="flex gap-4 items-center">
                 <Phone size={20} className="text-amber-500 shrink-0" />
-                <span className="text-sm">+234 808 233 2432</span>
+                <span className="text-sm">+234 902 212 0237 | +234 811 331 8849</span>
               </li>
               <li className="flex gap-4 items-center">
                 <Mail size={20} className="text-amber-500 shrink-0" />
