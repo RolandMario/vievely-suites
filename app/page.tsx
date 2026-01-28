@@ -24,8 +24,8 @@ export const SUITES = [
     name: 'Standard Studio',
     price: '88,704',
     tagline: 'Refined Simplicity',
-    description: 'Our Standard Suite offers a harmonious balance of comfort and style. Featuring signature bedding and handcrafted furniture, it provides a sanctuary for the solo traveler or couple looking for a peaceful city retreat.',
-    features: ['King Bed', 'Rain Shower', 'Work Desk', 'City View', 'Smart Lighting'],
+    description: 'Our Standard Studio is designed to deliver comfort, convenience, and affordability in one elegant space. Perfect for solo travelers and short stays, this studio offers a relaxing environment with modern furnishings and essential amenities, ensuring a seamless and enjoyable hotel experience.',
+    features: ['King-size bed', 'Rain Shower', 'Excellent room service', 'City View', 'Smart Lighting'],
     size: '35m²',
     images: [
       '/assets/standard-studio-4.jpeg',
@@ -34,18 +34,20 @@ export const SUITES = [
  
     ]
   },
-  {
-    id: 'deluxe',
-    name: 'Deluxe Studio',
-    price: '99,099',
-    tagline: 'Panoramic Luxury',
-    description: 'The Deluxe Suite elevates your stay with floor-to-ceiling windows and expanded living space. Wake up to breathtaking skyline views and enjoy premium amenities designed for ultimate relaxation.',
-    features: ['Private Balcony', 'Nespresso Machine', 'Soaking Tub', 'Premium Mini-bar', 'Pillow Menu'],
-    size: '50m²',
+
+
+    {
+    id: 'diplomatic',
+    name: 'Diplomatic Suite',
+    price: '145,299',
+    tagline: 'Unrivaled Grandeur',
+    description: 'The Diplomatic Suite offers refined comfort with generous living space, ideal for extended stays or business travel. Featuring a separate living room, private bedroom, and balcony, this suite combines elegance, privacy, and convenience at great value.',
+    features: ['king-sized bed','Separate living room', 'Private balcony', 'Kitchenette', 'Walk-in Wardrobe', 'High-Security Access', 'En-suite Steam Room'],
+    size: '120m²',
     images: [
-      '/assets/presidential-2.jpeg',
-      'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80'
+      '/assets/diplomatic_room.jpg',
+      'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=800&q=80'
     ]
   },
   {
@@ -53,8 +55,8 @@ export const SUITES = [
     name: 'Executive Suite',
     price: '147,610',
     tagline: 'The Professional Choice',
-    description: 'Perfect for business leaders, this suite features a distinct separation between the sleeping quarters and a sophisticated lounge area, suitable for intimate meetings or focused work sessions.',
-    features: ['Separate Living Area', 'Executive Lounge Access', 'Butler Service', 'Smart Home Controls', 'Daily Refreshments'],
+    description: 'The Executive Suite is crafted for professionals and guests who value space, functionality, and privacy. With a separate living area, visitor’s toilet, and balcony, this suite delivers premium comfort while remaining budget-conscious.',
+    features: ['Separate Living Area', 'Visitor’s toilet', 'King-size bed', 'Smart Home Controls', 'Daily Refreshments'],
     size: '75m²',
     images: [
       '/assets/executive-suites.jpeg',
@@ -63,16 +65,18 @@ export const SUITES = [
 
     ]
   },
-  {
-    id: 'diplomatic',
-    name: 'Diplomatic Suite',
-    price: '145,299',
+
+
+    {
+    id: 'presidential',
+    name: 'Presidential Suite',
+    price: '260,800',
     tagline: 'Unrivaled Grandeur',
-    description: 'Our most prestigious accommodation. The Diplomatic Suite is a masterpiece of design, offering unmatched privacy, security, and expansive entertainment spaces for high-profile guests.',
-    features: ['Dining Room', 'Kitchenette', 'Walk-in Wardrobe', 'High-Security Access', 'En-suite Steam Room'],
+    description: 'Our Presidential Suite offers an exceptional blend of luxury, space, and comfort. Featuring a spacious living room, two elegant bedrooms, and a private balcony, this suite is ideal for VIP guests, executives, or families seeking premium hotel accommodation.',
+    features: ['king-sized bed','Separate living room', 'Private balcony', 'Kitchenette', 'Walk-in Wardrobe', 'High-Security Access', 'En-suite Steam Room'],
     size: '120m²',
     images: [
-      '/assets/diplomatic_room.jpg',
+      '/assets/presidential-2.jpeg',
       'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=800&q=80'
     ]
@@ -82,7 +86,7 @@ export const SUITES = [
     name: 'Family Suite',
     price: '358,974',
     tagline: 'Home Collective',
-    description: 'Thoughtfully designed for families, this suite provides two interconnected bedrooms and a large central lounge. It combines the privacy of a home with the luxury services of a five-star hotel.',
+    description: 'The Family Suite is thoughtfully designed to accommodate families and groups in comfort and style. With a large living room, three private bedrooms, and a balcony, this suite ensures space, privacy, and affordability for unforgettable family stays',
     features: ['2 Master Bedrooms', 'Kids Activity Zone', 'Full Kitchen', 'Laundry Facilities', 'Family Dining Table'],
     size: '100m²',
     images: [
@@ -194,7 +198,7 @@ export default function App() {
             </button>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-8">
             {SUITES.map((suite:any, idx) => (
               <div 
                 key={suite.id}

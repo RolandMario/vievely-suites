@@ -24,7 +24,7 @@ export const navLinks = [
 export const SUITES = [
   {
     id: 'standard',
-    name: 'Standard Suite',
+    name: 'Standard Studio',
     route: '/standard',
     price: '88,704',
     tagline: 'Refined Simplicity',
@@ -35,7 +35,7 @@ export const SUITES = [
   },
   {
     id: 'deluxe',
-    name: 'Deluxe Suite',
+    name: 'Deluxe Studio',
     route: '/deluxe',
     price: '99,099',
     tagline: 'Panoramic Luxury',
@@ -65,6 +65,21 @@ export const SUITES = [
     features: ['Dining Room', 'Kitchenette', 'Walk-in Wardrobe'],
     size: '120m²',
     images: ['/assets/diplomatic_room.jpg']
+  },
+      {
+    id: 'presidential',
+    name: 'Presidential Suite',
+    route:'/presidential',
+    price: '260,800',
+    tagline: 'Unrivaled Grandeur',
+    description: 'Our Presidential Suite offers an exceptional blend of luxury, space, and comfort. Featuring a spacious living room, two elegant bedrooms, and a private balcony, this suite is ideal for VIP guests, executives, or families seeking premium hotel accommodation.',
+    features: ['king-sized bed','Separate living room', 'Private balcony', 'Kitchenette', 'Walk-in Wardrobe', 'High-Security Access', 'En-suite Steam Room'],
+    size: '120m²',
+    images: [
+      '/assets/presidential-2.jpeg',
+      'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=800&q=80'
+    ]
   },
   {
     id: 'family',
