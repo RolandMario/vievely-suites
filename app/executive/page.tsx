@@ -46,12 +46,13 @@ export const SUITES = [
     name: 'Executive Suite',
     price: '147,610',
     tagline: 'The Professional Choice',
-    description: 'Perfect for business leaders, this suite features a distinct separation between the sleeping quarters and a sophisticated lounge area, suitable for intimate meetings or focused work sessions.',
+    description: 'The Executive Suite is crafted for professionals and guests who value space, functionality, and privacy. With a separate living area, visitor’s toilet, and balcony, this suite delivers premium comfort while remaining budget-conscious.',
     features: ['Separate Living Area', 'Executive Lounge Access', 'Butler Service', 'Smart Home Controls', 'Daily Refreshments'],
     size: '75m²',
     images: [
-      '/assets/executive.jpeg',
-      'https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1200&q=80',
+      '/assets/executive-suites-2.jpeg',
+      '/assets/executive-suites-4.jpeg',
+      '/assets/executive-suites-6.jpeg',
       'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=800&q=80'
     ]
   },
@@ -104,11 +105,20 @@ export const SUITES = [
               <div className="relative rounded-[2.5rem] overflow-hidden h-64 shadow-xl bg-slate-900 flex items-center justify-center text-white p-10 text-center">
                 <div className="relative z-10">
                   <Waves className="mx-auto mb-4 text-amber-500" size={40} />
-                  <h4 className="font-bold text-lg mb-2">Pool & Spa Access</h4>
-                  <p className="text-xs text-slate-400">All {SUITES[2].name} bookings include complimentary rooftop pool access.</p>
+                  <h4 className="font-bold text-lg mb-2">Bath Room</h4>
+                  <p className="text-xs text-slate-400">All {SUITES[2].name} </p>
                 </div>
-                <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=400&q=80')] bg-cover" />
-              </div>
+                    <Image 
+                        src={`${SUITES[2].images[2]}`} 
+                        // width={400} height={200} 
+                        // objectFit='center' 
+
+                        alt='vievely family suites'
+                        fill
+                        style={{ objectFit: 'cover' }}
+                        // className={`absolute inset-0 object-fill   `}
+                      />
+             </div>
             </div>
           </div>
 

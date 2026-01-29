@@ -32,11 +32,13 @@ export const SUITES = [
     name: 'Family Suite',
     price: '358,974',
     tagline: 'Home Collective',
-    description: 'Thoughtfully designed for families, this suite provides two interconnected bedrooms and a large central lounge. It combines the privacy of a home with the luxury services of a five-star hotel.',
+    description: 'The Family Suite is thoughtfully designed to accommodate families and groups in comfort and style. With a large living room, three private bedrooms, and a balcony, this suite ensures space, privacy, and affordability for unforgettable family stays.',
     features: ['2 Master Bedrooms', 'Kids Activity Zone', 'Full Kitchen', 'Laundry Facilities', 'Family Dining Table'],
     size: '100m²',
     images: [
-      '/assets/family-2.jpg',
+      '/assets/family-suites-2.jpeg',
+      '/assets/family-suites-4.jpeg',
+      '/assets/pool.jpeg',
       'https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=80'
     ]
@@ -62,10 +64,16 @@ export const SUITES = [
               <div className="relative rounded-[2.5rem] overflow-hidden h-64 shadow-xl bg-slate-900 flex items-center justify-center text-white p-10 text-center">
                 <div className="relative z-10">
                   <Waves className="mx-auto mb-4 text-amber-500" size={40} />
-                  <h4 className="font-bold text-lg mb-2">Pool & Spa Access</h4>
-                  <p className="text-xs text-slate-400">All {SUITES[1].name} bookings include complimentary rooftop pool access.</p>
+                  <h4 className="font-bold text-lg mb-2">Pool Access</h4>
+                  <p className="text-xs text-slate-400">All {SUITES[1].name} bookings include complimentary pool access.</p>
                 </div>
-                <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=400&q=80')] bg-cover" />
+                      <Image 
+                        src={`${SUITES[1].images[2]}`} 
+                        fill
+                        style={{ objectFit: 'cover' }} 
+                        alt='vievely family suites'
+                        className={`absolute inset-0   `}
+                      />
               </div>
             </div>
           </div>

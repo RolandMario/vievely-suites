@@ -15,16 +15,17 @@ import Header from '../components/navbar';
 export const SUITES = [
   {
     id: 'standard',
-    name: 'Standard Suite',
+    name: 'Standard Studio',
     price: '88,704',
     tagline: 'Refined Simplicity',
-    description: 'Our Standard Suite offers a harmonious balance of comfort and style. Featuring signature bedding and handcrafted furniture, it provides a sanctuary for the solo traveler or couple looking for a peaceful city retreat.',
+    description: 'Our Standard Studio is designed to deliver comfort, convenience, and affordability in one elegant space. Perfect for solo travelers and short stays, this studio offers a relaxing environment with modern furnishings and essential amenities, ensuring a seamless and enjoyable hotel experience.',
     features: ['King Bed', 'Rain Shower', 'Work Desk', 'City View', 'Smart Lighting'],
     size: '35m²',
     images: [
       '/assets/standard-studio-4.jpeg',
       '/assets/standard-studio-3.jpeg',
-      '/assets/standard-studio-5.jpeg',
+      '/assets/standard-studio.jpeg',
+      '/assets/pool.jpeg',
 
     ]
   },
@@ -105,11 +106,19 @@ export const SUITES = [
               <div className="relative rounded-[2.5rem] overflow-hidden h-64 shadow-xl bg-slate-900 flex items-center justify-center text-white p-10 text-center">
                 <div className="relative z-10">
                   <Waves className="mx-auto mb-4 text-amber-500" size={40} />
-                  <h4 className="font-bold text-lg mb-2">Pool & Spa Access</h4>
-                  <p className="text-xs text-slate-400">All {SUITES[0].name} bookings include complimentary rooftop pool access.</p>
+                  <h4 className="font-bold text-lg mb-2">Pool Access</h4>
+                  <p className="text-xs text-slate-400">All {SUITES[0].name} </p>
                 </div>
-                <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=400&q=80')] bg-cover" />
-              </div>
+                    <Image 
+                        src={`${SUITES[0].images[3]}`} 
+                        fill
+                        style={{ objectFit: 'cover' }} 
+                        alt='vievely family suites'
+                        className={`absolute inset-0   `}
+                      />
+                
+             
+             </div>
             </div>
           </div>
 

@@ -22,6 +22,7 @@ export const SUITES = [
   {
     id: 'standard',
     name: 'Standard Studio',
+    route:'/standard',
     price: '88,704',
     tagline: 'Refined Simplicity',
     description: 'Our Standard Studio is designed to deliver comfort, convenience, and affordability in one elegant space. Perfect for solo travelers and short stays, this studio offers a relaxing environment with modern furnishings and essential amenities, ensuring a seamless and enjoyable hotel experience.',
@@ -39,13 +40,14 @@ export const SUITES = [
     {
     id: 'diplomatic',
     name: 'Diplomatic Suite',
+    route:'/diplomatic',
     price: '145,299',
     tagline: 'Unrivaled Grandeur',
     description: 'The Diplomatic Suite offers refined comfort with generous living space, ideal for extended stays or business travel. Featuring a separate living room, private bedroom, and balcony, this suite combines elegance, privacy, and convenience at great value.',
     features: ['king-sized bed','Separate living room', 'Private balcony', 'Kitchenette', 'Walk-in Wardrobe', 'High-Security Access', 'En-suite Steam Room'],
     size: '120m²',
     images: [
-      '/assets/diplomatic_room.jpg',
+      '/assets/diplomatic-suite-14.jpeg',
       'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=800&q=80'
     ]
@@ -53,6 +55,7 @@ export const SUITES = [
   {
     id: 'executive',
     name: 'Executive Suite',
+    route:'/executive',
     price: '147,610',
     tagline: 'The Professional Choice',
     description: 'The Executive Suite is crafted for professionals and guests who value space, functionality, and privacy. With a separate living area, visitor’s toilet, and balcony, this suite delivers premium comfort while remaining budget-conscious.',
@@ -70,6 +73,7 @@ export const SUITES = [
     {
     id: 'presidential',
     name: 'Presidential Suite',
+    route:'/presidential',
     price: '260,800',
     tagline: 'Unrivaled Grandeur',
     description: 'Our Presidential Suite offers an exceptional blend of luxury, space, and comfort. Featuring a spacious living room, two elegant bedrooms, and a private balcony, this suite is ideal for VIP guests, executives, or families seeking premium hotel accommodation.',
@@ -84,6 +88,7 @@ export const SUITES = [
   {
     id: 'family',
     name: 'Family Suite',
+    route:'/family',
     price: '358,974',
     tagline: 'Home Collective',
     description: 'The Family Suite is thoughtfully designed to accommodate families and groups in comfort and style. With a large living room, three private bedrooms, and a balcony, this suite ensures space, privacy, and affordability for unforgettable family stays',
@@ -200,10 +205,12 @@ export default function App() {
 
           <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-8">
             {SUITES.map((suite:any, idx) => (
-              <div 
+              <Link 
+              
                 key={suite.id}
                 className={`group cursor-pointer bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100 flex flex-col ${idx === 0 ? 'lg:col-span-2 lg:flex-row h-full' : ''}`}
-                onClick={() => navigateTo('suite-details', suite)}
+                // onClick={() => navigateTo('suite-details', suite)}
+                href={`${SUITES[idx].route}`}
               >
                 <div className={`relative overflow-hidden ${idx === 0 ? 'lg:w-1/2 h-80 lg:h-auto' : 'h-72'}`}>
                   <img src={suite.images[0]} alt={suite.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
@@ -228,7 +235,7 @@ export default function App() {
                     Explore Suite <ArrowRight size={18} />
                   </button>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
