@@ -32,7 +32,7 @@ import Footer from '../components/footer';
             <div className="relative">
               <img src="/assets/reception.jpeg" className="rounded-[4rem] shadow-2xl" alt="Lobby" />
               <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-amber-600 rounded-[3rem] p-10 text-white flex flex-col justify-center shadow-2xl">
-                <p className="text-5xl font-black mb-2">12+</p>
+                <p className="text-5xl font-black mb-2">5+</p>
                 <p className="text-sm font-bold uppercase tracking-widest opacity-80">Years of Service Excellence</p>
               </div>
             </div>
@@ -45,8 +45,8 @@ import Footer from '../components/footer';
                 <div className="grid gap-6">
                   {[
                     { icon: <Utensils />, title: 'In-Suite Dining', desc: 'World-class cuisine delivered to your door 24 hours a day.' },
-                    { icon: <ShieldCheck />, title: 'Secure Enclaves', desc: 'Advanced biometric access and 24/7 security for your peace of mind.' },
-                    { icon: <Waves />, title: 'Wellness Spas', desc: 'Private sessions in our rooftop wellness center for every guest.' }
+                    { icon: <ShieldCheck />, title: 'Elevator ', desc: 'A working elevator with 24/7 Electricity for easy movement.' },
+                    { icon: <Waves />, title: 'Wellness Gym', desc: 'Private sessions in our rooftop wellness center for every guest.' }
                   ].map((item, i) => (
                     <div key={i} className="flex gap-6 items-start group">
                       <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-amber-600 group-hover:bg-amber-600 group-hover:text-white transition-all shrink-0">

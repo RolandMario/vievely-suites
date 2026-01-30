@@ -4,6 +4,8 @@ import {
   MapPin, Phone, Mail, Instagram, Facebook, Twitter, 
   Menu, X, ChevronRight, ArrowRight 
 } from 'lucide-react';
+import Link from 'next/link';
+import Footer from '../components/footer';
 
 /**
  * Suite Data for the Header
@@ -184,7 +186,7 @@ const ContactView = () => {
                     <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-amber-500 shrink-0"><Phone size={24}/></div>
                     <div>
                       <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Call Us</p>
-                      <p className="font-bold text-lg">+234 808 233 2432</p>
+                      <p className="font-bold text-lg">+234 902 212 0237 | +234 811 331 8849</p>
                     </div>
                   </div>
                   <div className="flex gap-4">
@@ -201,9 +203,9 @@ const ContactView = () => {
                 <h4 className="font-black text-slate-900 text-xl mb-6">Socials</h4>
                 <div className="flex gap-4">
                   {[Instagram, Facebook, Twitter].map((Icon, i) => (
-                    <button key={i} className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-900 hover:bg-amber-600 hover:text-white transition-all">
+                    <Link href={'https://www.instagram.com/vievely_suites_and_apartments?utm_source=qr&igsh=MXd0YTBnam9jNXF5ag=='} key={i} className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-900 hover:bg-amber-600 hover:text-white transition-all">
                       <Icon size={24} />
-                    </button>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -211,7 +213,7 @@ const ContactView = () => {
           </div>
         </div>
       </div> 
-      <InternalFooter />
+      <Footer/>
     </main>
   );
 };

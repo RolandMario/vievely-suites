@@ -80,7 +80,7 @@ export const SUITES = [
     features: ['king-sized bed','Separate living room', 'Private balcony', 'Kitchenette', 'Walk-in Wardrobe', 'High-Security Access', 'En-suite Steam Room'],
     size: '120m²',
     images: [
-      '/assets/presidential-2.jpeg',
+      '/assets/presidential-suites-9.jpeg',
       'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=800&q=80'
     ]
@@ -95,7 +95,7 @@ export const SUITES = [
     features: ['2 Master Bedrooms', 'Kids Activity Zone', 'Full Kitchen', 'Laundry Facilities', 'Family Dining Table'],
     size: '100m²',
     images: [
-      '/assets/family-2.jpg',
+      '/assets/family-suites-5.jpeg',
       'https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=80'
     ]

@@ -15,6 +15,7 @@ export const SUITES = [
   {
     id: 'standard',
     name: 'Standard Suite',
+    route: '/standard',
     price: '88,704',
     tagline: 'Refined Simplicity',
     description: 'Our Standard Suite offers a harmonious balance of comfort and style. Featuring signature bedding and handcrafted furniture, it provides a sanctuary for the solo traveler or couple looking for a peaceful city retreat.',
@@ -29,6 +30,7 @@ export const SUITES = [
   {
     id: 'deluxe',
     name: 'Deluxe Suite',
+    route: '/deluxe',
     price: '99,099',
     tagline: 'Panoramic Luxury',
     description: 'The Deluxe Suite elevates your stay with floor-to-ceiling windows and expanded living space. Wake up to breathtaking skyline views and enjoy premium amenities designed for ultimate relaxation.',
@@ -43,6 +45,7 @@ export const SUITES = [
   {
     id: 'executive',
     name: 'Executive Suite',
+    route: '/executive',
     price: '147,610',
     tagline: 'The Professional Choice',
     description: 'Perfect for business leaders, this suite features a distinct separation between the sleeping quarters and a sophisticated lounge area, suitable for intimate meetings or focused work sessions.',
@@ -57,6 +60,7 @@ export const SUITES = [
   {
     id: 'diplomatic',
     name: 'Diplomatic Suite',
+    route: '/executive',
     price: '145,299',
     tagline: 'Unrivaled Grandeur',
     description: 'Our most prestigious accommodation. The Diplomatic Suite is a masterpiece of design, offering unmatched privacy, security, and expansive entertainment spaces for high-profile guests.',
@@ -71,6 +75,7 @@ export const SUITES = [
   {
     id: 'family',
     name: 'Family Suite',
+    route: '/family',
     price: '358,974',
     tagline: 'Home Collective',
     description: 'Thoughtfully designed for families, this suite provides two interconnected bedrooms and a large central lounge. It combines the privacy of a home with the luxury services of a five-star hotel.',
@@ -100,7 +105,7 @@ const navigateTo = (route:any, suite = null) => {
   };
     return(
         <>
-    <footer className="bg-[#0f172a] text-slate-400 pt-24 pb-12 overflow-hidden relative">
+    <footer className="bg-[#0f172a] text-slate-400 pt-24 pb-0 overflow-hidden relative">
       <div className="absolute top-0 right-0 w-96 h-96 bg-amber-600/5 blur-[120px] rounded-full -mr-48 -mt-48" />
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
@@ -132,9 +137,10 @@ const navigateTo = (route:any, suite = null) => {
 
           <div>
             <h4 className="text-white font-bold text-lg mb-8 relative after:content-[''] after:absolute after:bottom-[-8px] after:left-0 after:w-10 after:h-1 after:bg-amber-600">Explore</h4>
-            <ul className="space-y-4">
-              {SUITES.map((s:any) => (
-                <li key={s.id} onClick={() => navigateTo('suite-details', s)} className="hover:text-amber-500 transition-colors cursor-pointer text-sm">{s.name}</li>
+            <ul className="space-y-4 flex-row">
+              {SUITES.map((s:any, i) => (
+                <li key={s.id}   className="hover:text-amber-500 flex-row transition-colors cursor-pointer text-sm">{s.name}</li>
+                
               ))}
             </ul>
           </div>

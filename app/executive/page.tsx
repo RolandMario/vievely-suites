@@ -11,6 +11,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Header from '../components/navbar';
+import Footer from '../components/footer';
   // --- DATA CONSTANTS ---
 export const SUITES = [
   {
@@ -177,6 +178,7 @@ export const SUITES = [
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 

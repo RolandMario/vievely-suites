@@ -4,7 +4,7 @@ import {
   Dumbbell,  Clock, Sparkles, Wine, ShoppingCart, Wifi, Tv, Coffee, 
   Car, Plane, Mail, Instagram, Facebook, Twitter, 
   ChevronRight, Star, CheckCircle, Calendar, ShieldCheck,
-  ArrowRight, Waves, Utensils
+  ArrowRight, Waves, Utensils, HotelIcon
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -22,7 +22,8 @@ const AMENITIES = [
   { icon: <Tv size={20} />, title: 'Private Balconies' },
   { icon: <Car size={20} />, title: 'Secure Parking' },
   { icon: <ShieldCheck size={20} />, title: 'Guaranteed Security' },
-  { icon: <Plane size={20} />, title: 'Airport Transfers' }
+  { icon: <Plane size={20} />, title: 'Airport Transfers' },
+  { icon: <HotelIcon size={20} />, title: 'Elevator Access' }
 ];
 
 const Amenities = ()=>{

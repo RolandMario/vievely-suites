@@ -204,19 +204,19 @@ export default function Header({ navigateTo = (route:any, suite = null) => {}, c
       {mobileMenu && (
         <div className="fixed inset-0 top-[72px] bg-white z-[99] animate-in slide-in-from-right duration-300">
           <div className="flex flex-col p-8 gap-6 overflow-y-auto h-full">
-            <button onClick={() => handleInternalNavigate('home')} className="text-3xl font-black text-slate-900 text-left">Home</button>
+            <Link href={'/'} className="text-3xl font-black text-slate-900 text-left">Home</Link>
             
             <div className="space-y-4">
               <span className="text-sm font-bold text-amber-600 uppercase tracking-widest">Select Suite</span>
               <div className="grid gap-3">
                 {SUITES.map((s:any) => (
-                  <button 
+                  <Link 
                     key={s.id} 
-                    onClick={() => handleInternalNavigate('suite-details', s)} 
+                    href={`${s.route}`}
                     className="text-xl font-semibold text-slate-600 text-left pl-4 border-l-2 border-slate-100"
                   >
                     {s.name}
-                  </button>
+                  </Link>
                 ))}
               </div>
             </div>

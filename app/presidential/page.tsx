@@ -11,6 +11,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Header from '../components/navbar';
+import Footer from '../components/footer';
   // --- DATA CONSTANTS ---
 export const SUITES = [
   {
@@ -33,10 +34,10 @@ export const SUITES = [
     price: '260,800',
     tagline: 'Unrivaled Grandeur',
     description: 'Our Presidential Suite offers an exceptional blend of luxury, space, and comfort. Featuring a spacious living room, two elegant bedrooms, and a private balcony, this suite is ideal for VIP guests, executives, or families seeking premium hotel accommodation.',
-    features: ['king-sized bed','Separate living room', 'Private balcony', 'Kitchenette', 'Walk-in Wardrobe', 'High-Security Access', 'En-suite Steam Room'],
+    features: ['2 Masters Bedroom','Separate living room', 'Private balcony', 'Kitchenette', 'Walk-in Wardrobe', 'High-Security Access', 'En-suite Steam Room'],
     size: '120m²',
     images: [
-      '/assets/presidential-2.jpeg',
+      '/assets/presidential-suites-9.jpeg',
       '/assets/presidential-suites-7.jpeg',
       '/assets/presidential-suites-5.jpeg'
  
@@ -132,6 +133,7 @@ export const SUITES = [
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 

@@ -11,6 +11,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Header from '../components/navbar';
+import Footer from '../components/footer';
   // --- DATA CONSTANTS ---
 export const SUITES = [
   {
@@ -36,7 +37,7 @@ export const SUITES = [
     features: ['Dining Room', 'Kitchenette', 'Walk-in Wardrobe', 'High-Security Access', 'En-suite Steam Room'],
     size: '120m²',
     images: [
-      '/assets/diplomatic-suite-8.jpeg',
+      '/assets/diplomatic-suite-16.jpeg',
       '/assets/diplomatic-suite-4.jpeg',
       '/assets/diplomatic-suite-12.jpeg',
       'https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=800&q=80'
@@ -146,6 +147,7 @@ export const SUITES = [
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 

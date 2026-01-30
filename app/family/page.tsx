@@ -11,6 +11,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Header from '../components/navbar';
+import Footer from '../components/footer';
   // --- DATA CONSTANTS ---
 export const SUITES = [
   {
@@ -33,11 +34,12 @@ export const SUITES = [
     price: '358,974',
     tagline: 'Home Collective',
     description: 'The Family Suite is thoughtfully designed to accommodate families and groups in comfort and style. With a large living room, three private bedrooms, and a balcony, this suite ensures space, privacy, and affordability for unforgettable family stays.',
-    features: ['2 Master Bedrooms', 'Kids Activity Zone', 'Full Kitchen', 'Laundry Facilities', 'Family Dining Table'],
+    features: ['3 Master Bedrooms', 'Kids Activity Zone', 'Full Kitchen', 'Laundry Facilities', 'Family Dining Table'],
     size: '100m²',
     images: [
       '/assets/family-suites-2.jpeg',
       '/assets/family-suites-4.jpeg',
+      '/assets/diplomatic-suite-1.jpeg',
       '/assets/pool.jpeg',
       'https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=80'
@@ -64,8 +66,8 @@ export const SUITES = [
               <div className="relative rounded-[2.5rem] overflow-hidden h-64 shadow-xl bg-slate-900 flex items-center justify-center text-white p-10 text-center">
                 <div className="relative z-10">
                   <Waves className="mx-auto mb-4 text-amber-500" size={40} />
-                  <h4 className="font-bold text-lg mb-2">Pool Access</h4>
-                  <p className="text-xs text-slate-400">All {SUITES[1].name} bookings include complimentary pool access.</p>
+                  <h4 className="font-bold text-lg mb-2">Bath Room</h4>
+                  <p className="text-xs text-slate-400">All {SUITES[1].name} </p>
                 </div>
                       <Image 
                         src={`${SUITES[1].images[2]}`} 
@@ -133,6 +135,7 @@ export const SUITES = [
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 

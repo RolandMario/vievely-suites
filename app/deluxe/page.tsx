@@ -11,6 +11,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Header from '../components/navbar';
+import Footer from '../components/footer';
   // --- DATA CONSTANTS ---
 export const SUITES = [
   {
@@ -38,7 +39,7 @@ export const SUITES = [
     images: [
       '/assets/deluxe-studio-1.jpeg',
       '/assets/deluxe-studio-5.jpeg',
-      '/assets/pool.jpeg',
+      '/assets/executive-suites-6.jpeg',
       'https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80'
     ]
   },
@@ -105,8 +106,8 @@ export const SUITES = [
               <div className="relative rounded-[2.5rem] overflow-hidden h-64 shadow-xl bg-slate-900 flex items-center justify-center text-white p-10 text-center">
                 <div className="relative z-10">
                   <Waves className="mx-auto mb-4 text-amber-500" size={40} />
-                  <h4 className="font-bold text-lg mb-2">Pool Access</h4>
-                  <p className="text-xs text-slate-400">All {SUITES[1].name} bookings include complimentary pool access.</p>
+                  <h4 className="font-bold text-lg mb-2"></h4>
+                  <p className="text-xs text-slate-400">All {SUITES[1].name} </p>
                 </div>
                     <Image 
                         src={`${SUITES[1].images[2]}`} 
@@ -174,6 +175,7 @@ export const SUITES = [
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 
