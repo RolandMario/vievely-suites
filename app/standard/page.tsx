@@ -20,7 +20,7 @@ export const SUITES = [
     price: '88,704',
     tagline: 'Refined Simplicity',
     description: 'Our Standard Studio is designed to deliver comfort, convenience, and affordability in one elegant space. Perfect for solo travelers and short stays, this studio offers a relaxing environment with modern furnishings and essential amenities, ensuring a seamless and enjoyable hotel experience.',
-    features: ['King Bed', 'Rain Shower', 'Work Desk', 'City View', 'Smart Lighting'],
+    features: ['King-size bed', 'Excellent room service', 'Stable high-speed Wi-Fi', 'Pressing iron', 'Free parking'],
     size: '35m²',
     images: [
       '/assets/standard-studio-4.jpeg',

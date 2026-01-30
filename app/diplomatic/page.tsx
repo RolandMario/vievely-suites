@@ -34,7 +34,7 @@ export const SUITES = [
     price: '145,299',
     tagline: 'Unrivaled Grandeur',
     description: 'The Diplomatic Suite offers refined comfort with generous living space, ideal for extended stays or business travel. Featuring a separate living room, private bedroom, and balcony, this suite combines elegance, privacy, and convenience at great value.',
-    features: ['Dining Room', 'Kitchenette', 'Walk-in Wardrobe', 'High-Security Access', 'En-suite Steam Room'],
+    features: ['King-size bed', 'Kitchenette', 'Stable high-speed Wi-Fi', 'Free parking', 'Gym access'],
     size: '120m²',
     images: [
       '/assets/diplomatic-suite-16.jpeg',

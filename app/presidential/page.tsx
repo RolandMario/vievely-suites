@@ -34,7 +34,7 @@ export const SUITES = [
     price: '260,800',
     tagline: 'Unrivaled Grandeur',
     description: 'Our Presidential Suite offers an exceptional blend of luxury, space, and comfort. Featuring a spacious living room, two elegant bedrooms, and a private balcony, this suite is ideal for VIP guests, executives, or families seeking premium hotel accommodation.',
-    features: ['2 Masters Bedroom','Separate living room', 'Private balcony', 'Kitchenette', 'Walk-in Wardrobe', 'High-Security Access', 'En-suite Steam Room'],
+    features: ['2 Masters Bedroom','Separate living room', 'Private balcony', 'Kitchenette', 'Excellent room service', 'High-Security Access', 'Free parking'],
     size: '120m²',
     images: [
       '/assets/presidential-suites-9.jpeg',
