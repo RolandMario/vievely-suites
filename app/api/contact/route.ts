@@ -13,7 +13,7 @@ export async function POST(request: Request) {
     const { name, email, subject, message } = body;
 
     // 1. Validate Environment Variables exist
-    if (!process.env.EMAIL_USER || !process.env.CLIENT_ID || !process.env.CLIENT_SECRET || !process.env.REFRESH_TOKEN) {
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS ) {
         console.error('Missing Environment Variables');
         return NextResponse.json({ message: 'Server configuration error' }, { status: 500 });
     }
@@ -27,12 +27,8 @@ export async function POST(request: Request) {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        type: "OAuth2",
-        user: process.env.EMAIL_USER,
-        clientId: process.env.CLIENT_ID,
-        clientSecret: process.env.CLIENT_SECRET,
-        refreshToken: process.env.REFRESH_TOKEN,
-        // We do NOT need to pass accessToken here; Nodemailer generates it.
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_PASS,
       },
     });
 
