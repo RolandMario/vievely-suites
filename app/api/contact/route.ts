@@ -1,17 +1,10 @@
 // src/app/api/contact/route.ts
 
+
 import { NextResponse } from 'next/server';
+
 import nodemailer from 'nodemailer';
-import { google } from "googleapis";
 
-// Create OAuth2 client
-const oAuth2Client = new google.auth.OAuth2(
-  process.env.CLIENT_ID,
-  process.env.CLIENT_SECRET,
-  process.env.REDIRECT_URI
-);
-
-oAuth2Client.setCredentials({ refresh_token: process.env.REFRESH_TOKEN });
 
 
 export async function POST(request: Request) {
@@ -19,63 +12,76 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { name, email, subject, message } = body;
 
-    // Basic validation
+    // 1. Validate Environment Variables exist
+    if (!process.env.EMAIL_USER || !process.env.CLIENT_ID || !process.env.CLIENT_SECRET || !process.env.REFRESH_TOKEN) {
+        console.error('Missing Environment Variables');
+        return NextResponse.json({ message: 'Server configuration error' }, { status: 500 });
+    }
+
+    // 2. Basic Form Validation
     if (!name || !email || !message) {
       return NextResponse.json({ message: 'Missing required fields' }, { status: 400 });
     }
 
-    console.log('form data', email, name, message);
-
-    // Get a fresh access token for each request
-    const accessToken = await oAuth2Client.getAccessToken();
-
-    // Configure transporter inside the handler
+    // 3. Configure Transporter (Let Nodemailer handle the Access Token)
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
         type: "OAuth2",
-        user: process.env.EMAIL_USER, // your Gmail address
+        user: process.env.EMAIL_USER,
         clientId: process.env.CLIENT_ID,
         clientSecret: process.env.CLIENT_SECRET,
         refreshToken: process.env.REFRESH_TOKEN,
-        accessToken: accessToken.token as string,
+        // We do NOT need to pass accessToken here; Nodemailer generates it.
       },
     });
 
-    // Email content setup
+    // 4. Verify connection before sending (Optional but helpful for debugging)
+    await new Promise((resolve, reject) => {
+        transporter.verify(function (error, success) {
+            if (error) {
+                console.log("Transporter verification failed:", error);
+                reject(error);
+            } else {
+                console.log("Server is ready to take our messages");
+                resolve(success);
+            }
+        });
+    });
+
     const mailOptions = {
-      from: `"Vievely Suites & Apartments" <${process.env.EMAIL_USER}>`,
-      to: 'vievelysuites@gmail.com', // The target email address
-      subject: `New Contact Form Submission from Vievely Suites & Apartments Website: ${name}`,
+      from: `"Vievely Suites" <${process.env.EMAIL_USER}>`,
+      to: 'vievelysuites@gmail.com', // or process.env.EMAIL_USER if sending to yourself
+      replyTo: email, // Good practice: allows you to hit "Reply" and send to the customer
+      subject: `New Contact Form: ${name} - ${subject || 'No Subject'}`,
       html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
             <h2 style="color: #10B981;">New Vievely Suites Inquiry</h2>
             <p><strong>Name:</strong> ${name}</p>
             <p><strong>Email:</strong> ${email}</p>
+
             <p><strong>Subject:</strong> ${subject}</p>
-            <p><strong>Message:</strong></p>
+
             <div style="border: 1px solid #ccc; padding: 15px; border-radius: 5px; background-color: #f9f9f9;">
                 ${message.replace(/\n/g, '<br>')}
             </div>
-            <p style="margin-top: 20px; font-size: 0.9em; color: #666;">
-                This message was sent from the Vievely Suites website Contact Page.
-            </p>
+
         </div>
+
       `,
     };
 
-    // Send the email
+    // 5. Send Email
     await transporter.sendMail(mailOptions);
 
-    // Success response
+
     return NextResponse.json({ message: 'Email sent successfully!' }, { status: 200 });
 
   } catch (error) {
     console.error('Email sending error:', error);
     return NextResponse.json({
-      message: 'Failed to send email. Check server logs.',
+      message: 'Failed to send email.',
       error: (error as Error).message,
     }, { status: 500 });
   }
 }
-
