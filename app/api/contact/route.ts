@@ -2,13 +2,21 @@
 
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { google } from "googleapis";
 
 // Configure the Nodemailer transporter using your secure environment variables
+const oAuth2Client = new google.auth.OAuth2( process.env.CLIENT_ID, process.env.CLIENT_SECRET, process.env.REDIRECT_URI );
+oAuth2Client.setCredentials({ refresh_token: process.env.REFRESH_TOKEN });
+const accessToken = await oAuth2Client.getAccessToken();
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
+      type: "OAuth2",
+      user: process.env.EMAIL_USER, // your Gmail address 
+      clientId: process.env.CLIENT_ID,
+      clientSecret: process.env.CLIENT_SECRET,
+      refreshToken: process.env.REFRESH_TOKEN, 
+      accessToken: accessToken.token as string,
   },
 });
 
@@ -22,14 +30,15 @@ export async function POST(request: Request) {
       return NextResponse.json({ message: 'Missing required fields' }, { status: 400 });
     }
 
+    console.log('form data', email, name, message)
     // Email content setup
     const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: 'rolandmario2@gmail.com', // The target email address
-      subject: `New Contact Form Submission from SmartEnv Website: ${name}`,
+      from: `"Vievely Suites & Apartments" <${process.env.EMAIL_USER}>`,
+      to: 'vievelysuites@gmail.com', // The target email address
+      subject: `New Contact Form Submission from Vievely Suites & Apartments Website: ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
-            <h2 style="color: #10B981;">New SmartEnv Inquiry</h2>
+            <h2 style="color: #10B981;">New Vievely Suites Inquiry</h2>
             <p><strong>Name:</strong> ${name}</p>
             <p><strong>Email:</strong> ${email}</p>
             <p><strong>Email:</strong> ${subject}</p>
@@ -38,7 +47,7 @@ export async function POST(request: Request) {
                 ${message.replace(/\n/g, '<br>')}
             </div>
             <p style="margin-top: 20px; font-size: 0.9em; color: #666;">
-                This message was sent from the SmartEnv Contact Page.
+                This message was sent from the Vievely Suites website Contact Page.
             </p>
         </div>
       `,

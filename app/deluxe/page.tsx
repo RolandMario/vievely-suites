@@ -146,7 +146,7 @@ export const SUITES = [
                   <div className="w-12 h-12 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-900"><Users size={20}/></div>
                   <div>
                     <p className="text-[10px] font-bold text-slate-400 uppercase">Occupancy</p>
-                    <p className="font-bold">Up to 4 Guests</p>
+                    <p className="font-bold">Up to 2 Guests</p>
                   </div>
                 </div>
               </div>

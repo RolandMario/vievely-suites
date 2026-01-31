@@ -34,7 +34,7 @@ export const SUITES = [
     price: '145,299',
     tagline: 'Unrivaled Grandeur',
     description: 'The Diplomatic Suite offers refined comfort with generous living space, ideal for extended stays or business travel. Featuring a separate living room, private bedroom, and balcony, this suite combines elegance, privacy, and convenience at great value.',
-    features: ['King-size bed', 'Kitchenette', 'Stable high-speed Wi-Fi', 'Free parking', 'Gym access'],
+    features: ['King-size bed', 'Kitchenette', 'Stable high-speed Wi-Fi', 'Free parking', 'Gym access', 'Private Balcony'],
     size: '120m²',
     images: [
       '/assets/diplomatic-suite-16.jpeg',
@@ -118,7 +118,7 @@ export const SUITES = [
                   <div className="w-12 h-12 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-900"><Users size={20}/></div>
                   <div>
                     <p className="text-[10px] font-bold text-slate-400 uppercase">Occupancy</p>
-                    <p className="font-bold">Up to 4 Guests</p>
+                    <p className="font-bold">Up to 2 Guests</p>
                   </div>
                 </div>
               </div>

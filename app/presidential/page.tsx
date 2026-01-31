@@ -63,9 +63,9 @@ export const SUITES = [
               </div>
               <div className="relative rounded-[2.5rem] overflow-hidden h-64 shadow-xl bg-slate-900 flex items-center justify-center text-white p-10 text-center">
                 <div className="relative z-10">
-                  <Waves className="mx-auto mb-4 text-amber-500" size={40} />
-                  <h4 className="font-bold text-lg mb-2">Kitchen</h4>
-                  <p className="text-xs text-slate-400">All {SUITES[1].name}</p>
+                  {/* <Waves className="mx-auto mb-4 text-amber-500" size={40} /> */}
+                  <h4 className="font-bold text-lg mb-2"></h4>
+                  <p className="text-xs text-slate-400"></p>
                 </div>
                   <Image 
                       src={`${SUITES[1].images[2]}`} 

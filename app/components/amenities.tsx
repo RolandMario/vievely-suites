@@ -1,10 +1,11 @@
 "use client"
 
 import { 
-  Dumbbell,  Clock, Sparkles, Wine, ShoppingCart, Wifi, Tv, Coffee, 
+  Dumbbell,  Clock, Sparkles, Wine, ShoppingCart, Wifi, Tv, Coffee, BuildingIcon,
   Car, Plane, Mail, Instagram, Facebook, Twitter, 
   ChevronRight, Star, CheckCircle, Calendar, ShieldCheck,
-  ArrowRight, Waves, Utensils, HotelIcon
+  ArrowRight, Waves, Utensils, HotelIcon,
+  Building2
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -14,6 +15,7 @@ const AMENITIES = [
   { icon: <Waves size={20} />, title: 'Swimming Pool' },
   { icon: <Clock size={20} />, title: '24h Front Desk' },
   { icon: <Sparkles size={20} />, title: 'Quality Housekeeping' },
+  { icon: <Building2 size={20} />, title: 'Private Balcony' },
   { icon: <Wifi size={20} />, title: 'Stable Wi-Fi' },
   { icon: <Coffee size={20} />, title: 'Lively Lounge' },
   { icon: <Wine size={20} />, title: 'Pool-side Bar' },
