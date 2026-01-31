@@ -4,21 +4,15 @@ import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import { google } from "googleapis";
 
-// Configure the Nodemailer transporter using your secure environment variables
-const oAuth2Client = new google.auth.OAuth2( process.env.CLIENT_ID, process.env.CLIENT_SECRET, process.env.REDIRECT_URI );
+// Create OAuth2 client
+const oAuth2Client = new google.auth.OAuth2(
+  process.env.CLIENT_ID,
+  process.env.CLIENT_SECRET,
+  process.env.REDIRECT_URI
+);
+
 oAuth2Client.setCredentials({ refresh_token: process.env.REFRESH_TOKEN });
-const accessToken = await oAuth2Client.getAccessToken();
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-      type: "OAuth2",
-      user: process.env.EMAIL_USER, // your Gmail address 
-      clientId: process.env.CLIENT_ID,
-      clientSecret: process.env.CLIENT_SECRET,
-      refreshToken: process.env.REFRESH_TOKEN, 
-      accessToken: accessToken.token as string,
-  },
-});
+
 
 export async function POST(request: Request) {
   try {
@@ -30,7 +24,24 @@ export async function POST(request: Request) {
       return NextResponse.json({ message: 'Missing required fields' }, { status: 400 });
     }
 
-    console.log('form data', email, name, message)
+    console.log('form data', email, name, message);
+
+    // Get a fresh access token for each request
+    const accessToken = await oAuth2Client.getAccessToken();
+
+    // Configure transporter inside the handler
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        type: "OAuth2",
+        user: process.env.EMAIL_USER, // your Gmail address
+        clientId: process.env.CLIENT_ID,
+        clientSecret: process.env.CLIENT_SECRET,
+        refreshToken: process.env.REFRESH_TOKEN,
+        accessToken: accessToken.token as string,
+      },
+    });
+
     // Email content setup
     const mailOptions = {
       from: `"Vievely Suites & Apartments" <${process.env.EMAIL_USER}>`,
@@ -41,7 +52,7 @@ export async function POST(request: Request) {
             <h2 style="color: #10B981;">New Vievely Suites Inquiry</h2>
             <p><strong>Name:</strong> ${name}</p>
             <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Email:</strong> ${subject}</p>
+            <p><strong>Subject:</strong> ${subject}</p>
             <p><strong>Message:</strong></p>
             <div style="border: 1px solid #ccc; padding: 15px; border-radius: 5px; background-color: #f9f9f9;">
                 ${message.replace(/\n/g, '<br>')}
@@ -61,18 +72,10 @@ export async function POST(request: Request) {
 
   } catch (error) {
     console.error('Email sending error:', error);
-    // Error response
-    return NextResponse.json({ 
-        message: 'Failed to send email. Check server logs.',
-        error: (error as Error).message,
+    return NextResponse.json({
+      message: 'Failed to send email. Check server logs.',
+      error: (error as Error).message,
     }, { status: 500 });
   }
 }
-
-
-
-
-
-
-
 
