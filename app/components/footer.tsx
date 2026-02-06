@@ -128,11 +128,11 @@ const navigateTo = (route:any, suite = null) => {
           
           <div>
             <h4 className="text-white font-bold text-lg mb-8 relative after:content-[''] after:absolute after:bottom-[-8px] after:left-0 after:w-10 after:h-1 after:bg-amber-600">Company</h4>
-            <ul className="space-y-4">
-              {['Home', 'About Us', 'Contact', 'Press Kit', 'Careers'].map(item => (
-                <li key={item} className="hover:text-amber-500 transition-colors cursor-pointer text-sm">{item}</li>
+            <div className="space-y-4 flex flex-col">
+              {[{menu:'Home', route:'/', id:0}, {menu:'About Us', route:'/about', id:1}, {menu:'Contact', route:'/contact', id:2}].map(item => (
+                <Link key={item.id} href={`${item.route}`} className="hover:text-amber-500 transition-colors cursor-pointer text-sm">{item.menu}</Link>
               ))}
-            </ul>
+            </div>
           </div>
 
           <div>
