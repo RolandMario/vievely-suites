@@ -60,7 +60,7 @@ export const SUITES = [
   {
     id: 'diplomatic',
     name: 'Diplomatic Suite',
-    route: '/executive',
+    route: '/diplomatic',
     price: '145,299',
     tagline: 'Unrivaled Grandeur',
     description: 'Our most prestigious accommodation. The Diplomatic Suite is a masterpiece of design, offering unmatched privacy, security, and expansive entertainment spaces for high-profile guests.',
@@ -137,12 +137,15 @@ const navigateTo = (route:any, suite = null) => {
 
           <div>
             <h4 className="text-white font-bold text-lg mb-8 relative after:content-[''] after:absolute after:bottom-[-8px] after:left-0 after:w-10 after:h-1 after:bg-amber-600">Explore</h4>
-            <ul className="space-y-4 flex-row">
-              {SUITES.map((s:any, i) => (
-                <li key={s.id}   className="hover:text-amber-500 flex-row transition-colors cursor-pointer text-sm">{s.name}</li>
+            <div className="flex flex-col space-y-4"> 
+              {SUITES.map((s: any) => ( 
                 
+                <Link key={s.id} href={s.route}
+                    className="hover:text-amber-500 transition-colors cursor-pointer text-sm" > 
+                    {s.name} 
+               </Link> 
               ))}
-            </ul>
+            </div>
           </div>
 
           <div>

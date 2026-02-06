@@ -35,7 +35,21 @@ export const SUITES = [
  
     ]
   },
-
+  {
+    id: 'deluxe',
+    name: 'Deluxe Studio',
+    route: '/deluxe',
+    price: '99,099',
+    tagline: 'Panoramic Luxury',
+    description: 'The Deluxe Studio offers an upgraded stay with added space and a private balcony for fresh air and relaxation. Stylish and inviting, this room is perfect for guests who desire comfort, value, and a touch of luxury at an affordable rate.',
+    features: ['King-size bed', 'Excellent room service', 'Stable high-speed Wi-Fi', 'Pressing iron', 'Free parking'],
+    size: '50m²',
+    images: [
+      '/assets/deluxe-studio-1.jpeg',
+      '/assets/deluxe-studio-5.jpeg',
+      '/assets/executive-suites-6.jpeg',
+   ]
+  },
 
     {
     id: 'diplomatic',
@@ -203,41 +217,53 @@ export default function App() {
             </button>
           </div>
 
-          <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-8">
-            {SUITES.map((suite:any, idx) => (
-              <Link 
-              
-                key={suite.id}
-                className={`group cursor-pointer bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100 flex flex-col ${idx === 0 ? 'lg:col-span-2 lg:flex-row h-full' : ''}`}
-                // onClick={() => navigateTo('suite-details', suite)}
-                href={`${SUITES[idx].route}`}
+<div className="grid md:grid-cols-3 lg:grid-cols-3 gap-8">
+  {SUITES.map((suite: any) => (
+    <Link
+      key={suite.id}
+      className="group cursor-pointer bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100 flex flex-col"
+      href={suite.route}
+    >
+      <div className="relative overflow-hidden h-72">
+        <img
+          src={suite.images[0]}
+          alt={suite.name}
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+        />
+        <div className="absolute top-6 left-6 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-xs font-bold text-slate-900 shadow-xl">
+          From N{suite.price}/Night
+        </div>
+      </div>
+      <div className="p-8 flex flex-col justify-between">
+        <div>
+          <div className="flex justify-between items-start mb-4">
+            <h3 className="text-2xl font-black text-slate-900">{suite.name}</h3>
+            <div className="flex text-amber-500">
+              <Star size={16} fill="currentColor" />
+            </div>
+          </div>
+          <p className="text-slate-500 text-sm leading-relaxed mb-6 line-clamp-3">
+            {suite.description}
+          </p>
+          <div className="flex flex-wrap gap-2 mb-8">
+            {suite.features.slice(0, 3).map((f: any) => (
+              <span
+                key={f}
+                className="bg-slate-50 text-[10px] uppercase font-bold text-slate-500 px-3 py-1 rounded-full"
               >
-                <div className={`relative overflow-hidden ${idx === 0 ? 'lg:w-1/2 h-80 lg:h-auto' : 'h-72'}`}>
-                  <img src={suite.images[0]} alt={suite.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                  <div className="absolute top-6 left-6 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-xs font-bold text-slate-900 shadow-xl">
-                    From N{suite.price}/Night
-                  </div>
-                </div>
-                <div className={`p-8 flex flex-col justify-between ${idx === 0 ? 'lg:w-1/2' : ''}`}>
-                  <div>
-                    <div className="flex justify-between items-start mb-4">
-                      <h3 className="text-2xl font-black text-slate-900">{suite.name}</h3>
-                      <div className="flex text-amber-500"><Star size={16} fill="currentColor"/></div>
-                    </div>
-                    <p className="text-slate-500 text-sm leading-relaxed mb-6 line-clamp-3">{suite.description}</p>
-                    <div className="flex flex-wrap gap-2 mb-8">
-                      {suite.features.slice(0, 3).map((f:any) => (
-                        <span key={f} className="bg-slate-50 text-[10px] uppercase font-bold text-slate-500 px-3 py-1 rounded-full">{f}</span>
-                      ))}
-                    </div>
-                  </div>
-                  <button className="w-full py-4 border-2 border-slate-900 text-slate-900 font-bold rounded-2xl group-hover:bg-slate-900 group-hover:text-white transition-all flex items-center justify-center gap-2">
-                    Explore Suite <ArrowRight size={18} />
-                  </button>
-                </div>
-              </Link>
+                {f}
+              </span>
             ))}
           </div>
+        </div>
+        <button className="w-full py-4 border-2 border-slate-900 text-slate-900 font-bold rounded-2xl group-hover:bg-slate-900 group-hover:text-white transition-all flex items-center justify-center gap-2">
+          Explore Suite <ArrowRight size={18} />
+        </button>
+      </div>
+    </Link>
+  ))}
+</div>
+
         </div>
       </section>
     </div>

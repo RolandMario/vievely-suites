@@ -108,14 +108,15 @@ const ContactView = () => {
                     <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-amber-500 shrink-0"><Phone size={24}/></div>
                     <div>
                       <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Call Us</p>
-                      <p className="font-bold text-lg">+234 902 212 0237 | +234 811 331 8849</p>
+                      <p className="font-bold text-md">+234 902 212 0237</p>
+                      <p className="font-bold text-md">+234 811 331 8849</p>
                     </div>
                   </div>
                   <div className="flex gap-4">
                     <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-amber-500 shrink-0"><Mail size={24}/></div>
                     <div>
                       <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Email Us</p>
-                      <p className="font-bold text-lg">vievelysuites@gmail.com</p>
+                      <p className="font-bold text-sm">vievelysuites@gmail.com</p>
                     </div>
                   </div>
                 </div>
