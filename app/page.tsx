@@ -91,7 +91,7 @@ export const SUITES = [
     price: '260,800',
     tagline: 'Unrivaled Grandeur',
     description: 'Our Presidential Suite offers an exceptional blend of luxury, space, and comfort. Featuring a spacious living room, two elegant bedrooms, and a private balcony, this suite is ideal for VIP guests, executives, or families seeking premium hotel accommodation.',
-    features: ['king-sized bed','Separate living room', 'Private balcony', 'Kitchenette', 'Walk-in Wardrobe', 'High-Security Access', 'En-suite Steam Room'],
+    features: ['2 Master Bedrooms','Separate living room', 'Private balcony', 'Kitchenette', 'Walk-in Wardrobe', 'High-Security Access', 'En-suite Steam Room'],
     size: '120m²',
     images: [
       '/assets/presidential-suites-9.jpeg',
@@ -106,7 +106,7 @@ export const SUITES = [
     price: '358,974',
     tagline: 'Home Collective',
     description: 'The Family Suite is thoughtfully designed to accommodate families and groups in comfort and style. With a large living room, three private bedrooms, and a balcony, this suite ensures space, privacy, and affordability for unforgettable family stays',
-    features: ['2 Master Bedrooms', 'Kids Activity Zone', 'Full Kitchen', 'Laundry Facilities', 'Family Dining Table'],
+    features: ['3 Master Bedrooms', 'Private balcony', 'Kitchenette', 'Laundry Facilities', 'Family Dining Table'],
     size: '100m²',
     images: [
       '/assets/family-suites-5.jpeg',

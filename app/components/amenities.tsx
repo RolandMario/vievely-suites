@@ -21,8 +21,7 @@ const AMENITIES = [
   { icon: <Wine size={20} />, title: 'Pool-side Bar' },
   { icon: <Utensils size={20} />, title: 'F&B Service' },
   { icon: <ShoppingCart size={20} />, title: 'In-house Minimart' },
-  { icon: <Tv size={20} />, title: 'Private Balconies' },
-  { icon: <Car size={20} />, title: 'Secure Parking' },
+  { icon: <Car size={20} />, title: 'Free Parking Space' },
   { icon: <ShieldCheck size={20} />, title: 'Guaranteed Security' },
   { icon: <Plane size={20} />, title: 'Airport Transfers' },
   { icon: <HotelIcon size={20} />, title: 'Elevator Access' }
@@ -40,7 +39,7 @@ const Amenities = ()=>{
             <div className="relative group">
               <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl">
                 <img 
-                  src="/assets/vievely_front.jpeg" 
+                  src="/assets/vievely_front_2.jpeg" 
                   alt="Luxury Apartment Services" 
                   className="w-full h-[700px] object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
