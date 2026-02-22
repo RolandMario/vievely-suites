@@ -9,11 +9,12 @@ import Footer from '../components/footer';
 
 // Mocked SUITES data for the self-contained component
 const SUITES = [
-  { id: 'standard', name: 'Standard Studio', price: '88,704' },
-  { id: 'deluxe', name: 'Deluxe Studio', price: '99,099' },
+  { id: 'standard', name: 'Standard Studio', price: '95,704' },
+  { id: 'deluxe', name: 'Deluxe Studio', price: '108,099' },
+  { id: 'diplomatic', name: 'Diplomatic Suite', price: '157,299' },
+  { id: 'executive', name: 'Executive Suite', price: '162,610' },
   { id: 'presidential', name: 'Presidential Suite', price: '260,800' },
-  { id: 'executive', name: 'Executive Suite', price: '147,610' },
-  { id: 'diplomatic', name: 'Diplomatic Suite', price: '145,299' },
+
   { id: 'family', name: 'Family Suite', price: '358,974' }
 ];
 

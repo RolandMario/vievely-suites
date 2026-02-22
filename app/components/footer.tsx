@@ -14,7 +14,7 @@ import Link from 'next/link';
 export const SUITES = [
   {
     id: 'standard',
-    name: 'Standard Suite',
+    name: 'Standard Studio',
     route: '/standard',
     price: '88,704',
     tagline: 'Refined Simplicity',
@@ -29,7 +29,7 @@ export const SUITES = [
   },
   {
     id: 'deluxe',
-    name: 'Deluxe Suite',
+    name: 'Deluxe Studio',
     route: '/deluxe',
     price: '99,099',
     tagline: 'Panoramic Luxury',
@@ -40,6 +40,21 @@ export const SUITES = [
       '/assets/presidential-2.jpeg',
       'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80'
+    ]
+  },
+    {
+    id: 'diplomatic',
+    name: 'Diplomatic Suite',
+    route: '/diplomatic',
+    price: '145,299',
+    tagline: 'Unrivaled Grandeur',
+    description: 'Our most prestigious accommodation. The Diplomatic Suite is a masterpiece of design, offering unmatched privacy, security, and expansive entertainment spaces for high-profile guests.',
+    features: ['Dining Room', 'Kitchenette', 'Walk-in Wardrobe', 'High-Security Access', 'En-suite Steam Room'],
+    size: '120m²',
+    images: [
+      '/assets/diplomatic_room.jpg',
+      'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=800&q=80'
     ]
   },
   {
@@ -57,21 +72,7 @@ export const SUITES = [
       'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=800&q=80'
     ]
   },
-  {
-    id: 'diplomatic',
-    name: 'Diplomatic Suite',
-    route: '/diplomatic',
-    price: '145,299',
-    tagline: 'Unrivaled Grandeur',
-    description: 'Our most prestigious accommodation. The Diplomatic Suite is a masterpiece of design, offering unmatched privacy, security, and expansive entertainment spaces for high-profile guests.',
-    features: ['Dining Room', 'Kitchenette', 'Walk-in Wardrobe', 'High-Security Access', 'En-suite Steam Room'],
-    size: '120m²',
-    images: [
-      '/assets/diplomatic_room.jpg',
-      'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=800&q=80'
-    ]
-  },
+
   {
     id: 'family',
     name: 'Family Suite',
@@ -157,7 +158,12 @@ const navigateTo = (route:any, suite = null) => {
               </li>
               <li className="flex gap-4 items-center">
                 <Phone size={20} className="text-amber-500 shrink-0" />
-                <span className="text-sm">+234 902 212 0237 | +234 811 331 8849</span>
+                <span className="text-sm">+234 902 212 0237</span>
+                
+              </li>
+              <li className="flex gap-4 items-center">
+                 <Phone size={20} className="text-amber-500 shrink-0" />
+                <span className="text-sm">+234 811 331 8849</span>
               </li>
               <li className="flex gap-4 items-center">
                 <Mail size={20} className="text-amber-500 shrink-0" />
