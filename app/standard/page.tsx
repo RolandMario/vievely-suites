@@ -17,7 +17,7 @@ export const SUITES = [
   {
     id: 'standard',
     name: 'Standard Studio',
-    price: '88,704',
+    price: '95,704',
     tagline: 'Refined Simplicity',
     description: 'Our Standard Studio is designed to deliver comfort, convenience, and affordability in one elegant space. Perfect for solo travelers and short stays, this studio offers a relaxing environment with modern furnishings and essential amenities, ensuring a seamless and enjoyable hotel experience.',
     features: ['King-size bed', 'Excellent room service', 'Stable high-speed Wi-Fi', 'Pressing iron', 'Free parking'],

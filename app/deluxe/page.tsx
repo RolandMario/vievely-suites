@@ -31,7 +31,7 @@ export const SUITES = [
   {
     id: 'deluxe',
     name: 'Deluxe Studio',
-    price: '99,099',
+    price: '108,099',
     tagline: 'Panoramic Luxury',
     description: 'The Deluxe Studio offers an upgraded stay with added space and a private balcony for fresh air and relaxation. Stylish and inviting, this room is perfect for guests who desire comfort, value, and a touch of luxury at an affordable rate.',
     features: ['King-size bed', 'Excellent room service', 'Stable high-speed Wi-Fi', 'Pressing iron', 'Free parking'],

@@ -31,7 +31,7 @@ export const SUITES = [
   {
     id: 'diplomatic',
     name: 'Diplomatic Suite',
-    price: '145,299',
+    price: '157,299',
     tagline: 'Unrivaled Grandeur',
     description: 'The Diplomatic Suite offers refined comfort with generous living space, ideal for extended stays or business travel. Featuring a separate living room, private bedroom, and balcony, this suite combines elegance, privacy, and convenience at great value.',
     features: ['King-size bed', 'Kitchenette', 'Stable high-speed Wi-Fi', 'Free parking', 'Gym access', 'Private Balcony'],

@@ -45,7 +45,7 @@ export const SUITES = [
   {
     id: 'executive',
     name: 'Executive Suite',
-    price: '147,610',
+    price: '162,610',
     tagline: 'The Professional Choice',
     description: 'The Executive Suite is crafted for professionals and guests who value space, functionality, and privacy. With a separate living area, visitor’s toilet, and balcony, this suite delivers premium comfort while remaining budget-conscious.',
     features: ['King-size bed', 'Visitor’s toilet', 'Private balcony', 'Kitchen/Kitchenette', 'Stable high-speed Wi-Fi'],
