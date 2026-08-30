@@ -133,7 +133,7 @@ export default function Header({ navigateTo = (route:any, suite = null) => {}, c
             </div>
           </div>
           <div className="flex flex-col">
-            <span className={`text-xl font-black tracking-widest leading-none ${isScrolled ? 'text-slate-900' : 'text-white'}`}>VIEVELY</span>
+            <span className={`text-xl font-black tracking-widest leading-none ${isScrolled ? 'text-slate-900' : 'text-black'}`}>VIEVELY</span>
             <span className={`text-[10px] font-bold tracking-[0.4em] ${isScrolled ? 'text-amber-600' : 'text-amber-400'}`}>SUITES & APARTMENT</span>
           </div>
         </Link>
@@ -143,14 +143,14 @@ export default function Header({ navigateTo = (route:any, suite = null) => {}, c
           <Link 
             // onClick={() => handleInternalNavigate('home')}
             href={'/'} 
-            className={`transition-colors hover:text-amber-500 ${currentView === 'home' ? 'text-amber-500' : ''}`}
+            className={`transition-colors hover:text-amber-500 ${currentView === 'home' ? 'text-black' : 'text-amber-500'}`}
           >
             Home
           </Link>
           
           {/* Suites Dropdown */}
           <div className="relative group py-2">
-            <button className={`flex items-center gap-1 transition-colors hover:text-amber-500 ${currentView === 'suite-details' ? 'text-amber-500' : ''}`}>
+            <button className={`flex items-center gap-1 text-amber-500 transition-colors hover:text-amber-500 ${currentView === 'suite-details' ? 'text-black' : 'text-amber-500'}`}>
               Our Suites <ChevronRight size={14} className="group-hover:rotate-90 transition-transform" />
             </button>
             <div className="absolute top-full -left-4 w-64 bg-white shadow-2xl rounded-2xl overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all border border-slate-100 p-2 transform translate-y-2 group-hover:translate-y-0">
@@ -170,14 +170,14 @@ export default function Header({ navigateTo = (route:any, suite = null) => {}, c
           <Link 
             // onClick={() => handleInternalNavigate('about')} 
             href={'/about'}
-            className={`transition-colors hover:text-amber-500 ${currentView === 'about' ? 'text-amber-500' : ''}`}
+            className={`transition-colors hover:text-amber-500 ${currentView === 'about' ? 'text-black' : 'text-amber-500'}`}
           >
             About
           </Link>
           <Link 
             // onClick={() => handleInternalNavigate('contact')} 
             href={'/contact'}
-            className={`transition-colors hover:text-amber-500 ${currentView === 'contact' ? 'text-amber-500' : ''}`}
+            className={`transition-colors hover:text-amber-500 ${currentView === 'contact' ? 'text-black' : 'text-amber-500'}`}
           >
             Contact
           </Link>

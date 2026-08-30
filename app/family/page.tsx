@@ -31,7 +31,7 @@ export const SUITES = [
   {
     id: 'family',
     name: 'Family Suite',
-    price: '358,974',
+    price: '375,800',
     tagline: 'Home Collective',
     description: 'The Family Suite is thoughtfully designed to accommodate families and groups in comfort and style. With a large living room, three private bedrooms, and a balcony, this suite ensures space, privacy, and affordability for unforgettable family stays.',
     features: ['3 Master Bedrooms', 'Private balcony', 'Kitchenette', 'Laundry Facilities', 'Separate living room'],

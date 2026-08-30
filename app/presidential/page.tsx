@@ -31,7 +31,7 @@ export const SUITES = [
     {
     id: 'presidential',
     name: 'Presidential Suite',
-    price: '260,800',
+    price: '262,800',
     tagline: 'Unrivaled Grandeur',
     description: 'Our Presidential Suite offers an exceptional blend of luxury, space, and comfort. Featuring a spacious living room, two elegant bedrooms, and a private balcony, this suite is ideal for VIP guests, executives, or families seeking premium hotel accommodation.',
     features: ['2 Masters Bedroom','Separate living room', 'Private balcony', 'Kitchenette', 'Excellent room service', 'High-Security Access', 'Free parking'],

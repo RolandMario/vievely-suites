@@ -9,13 +9,13 @@ import Footer from '../components/footer';
 
 // Mocked SUITES data for the self-contained component
 const SUITES = [
-  { id: 'standard', name: 'Standard Studio', price: '95,704' },
-  { id: 'deluxe', name: 'Deluxe Studio', price: '108,099' },
-  { id: 'diplomatic', name: 'Diplomatic Suite', price: '157,299' },
-  { id: 'executive', name: 'Executive Suite', price: '162,610' },
-  { id: 'presidential', name: 'Presidential Suite', price: '260,800' },
+  { id: 'standard', name: 'Standard Studio', price: '99,704' },
+  { id: 'deluxe', name: 'Deluxe Studio', price: '113,099' },
+  { id: 'diplomatic', name: 'Diplomatic Suite', price: '162,299' },
+  { id: 'executive', name: 'Executive Suite', price: '167,610' },
+  { id: 'presidential', name: 'Presidential Suite', price: '262,800' },
 
-  { id: 'family', name: 'Family Suite', price: '358,974' }
+  { id: 'family', name: 'Family Suite', price: '375,800' }
 ];
 
 const BookingView = () => {
@@ -79,7 +79,7 @@ const BookingView = () => {
   return (
     <div className="pt-12 pb-24 bg-slate-50 min-h-screen px-6 font-sans">
       <Header/>
-      <div className="max-w-5xl mx-auto bg-white rounded-[3rem] shadow-2xl overflow-hidden border border-slate-100">
+      <div className="max-w-5xl mx-auto my-24 bg-white rounded-[3rem] shadow-2xl overflow-hidden border border-slate-100">
         <div className="grid md:grid-cols-12">
           {/* Sidebar Info */}
           <div className="md:col-span-4 bg-slate-900 p-10 text-white flex flex-col justify-between relative overflow-hidden min-h-[400px]">

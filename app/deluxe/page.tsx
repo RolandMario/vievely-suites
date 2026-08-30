@@ -17,7 +17,7 @@ export const SUITES = [
   {
     id: 'standard',
     name: 'Standard Suite',
-    price: '88,704',
+    price: '99,704',
     tagline: 'Refined Simplicity',
     description: 'Our Standard Suite offers a harmonious balance of comfort and style. Featuring signature bedding and handcrafted furniture, it provides a sanctuary for the solo traveler or couple looking for a peaceful city retreat.',
     features: ['King Bed', 'Rain Shower', 'Work Desk', 'City View', 'Smart Lighting'],
